@@ -10,19 +10,19 @@ In this project, we’ll convert chemical images to the molecular structure anno
 ## Results
 This section will discuss the Exploratory data analysis, optimization, pre-processing, and training models.
 1)	Exploratory Data Analysis- 
-•	The dataset used in this project is from Bristol-Meyers Squibb’s bms molecular translation. There are 242418f labels in the training dataset.
-•	String length of labels in the sample set of training labels are: [130,173,156,141,68]
-•	The mean, median, and maximum character length of labels in the training dataset are 120, 115, and 397, respectively.
-•	The Dataset comprises 100 features that are depicted by Image Pixels.
+ Markup : * The dataset used in this project is from Bristol-Meyers Squibb’s bms molecular translation. There are 242418f labels in the training dataset.
+          *	String length of labels in the sample set of training labels are: [130,173,156,141,68]
+          *	The mean, median, and maximum character length of labels in the training dataset are 120, 115, and 397, respectively.
+          *	The Dataset comprises 100 features that are depicted by Image Pixels.
 
 2)	Model and Pre-processing
-•	Build a model to predict the chirality of each chemical compound
-•	In our dataset of 2.4 million compounds, nearly 2 million compounds are not chiral, whereas 0.4 million are chiral with the chirality flag as 1
-•	Preprocessed training images by resizing them and bringing them to the same color gradient
-•	Build a Neural Network model using EfficientNet, which predicts the chirality of chemical compounds, achieving a validation accuracy of 92% with a log loss of 0.43. 
-•	Performed Batch Normalization after every layer of the training model
-•	Build 2 models, among them one model is 3 layered network, calculating the Levenshtein distance of validation data as 7.73. Our model predicts the same chemical structure with an average error of 7 characters
-•	The other model is 5 layered network, calculating the Levenshtein distance of validation data as 8.95. Our model predicts the same chemical structure with an average of 8 characters
+ Markup : *	Build a model to predict the chirality of each chemical compound
+          *	In our dataset of 2.4 million compounds, nearly 2 million compounds are not chiral, whereas 0.4 million are chiral with the chirality flag as 1
+          *	Preprocessed training images by resizing them and bringing them to the same color gradient
+          *	Build a Neural Network model using EfficientNet, which predicts the chirality of chemical compounds, achieving a validation accuracy of 92% with a log loss of 0.43. 
+          *	Performed Batch Normalization after every layer of the training model
+          *	Build 2 models, among them one model is 3 layered network, calculating the Levenshtein distance of validation data as 7.73. Our model predicts the same chemical structure with an average error of 7 characters
+          *	The other model is 5 layered network, calculating the Levenshtein distance of validation data as 8.95. Our model predicts the same chemical structure with an average of 8 characters
 
 ## Requirements
 This project requires the below libraries:
