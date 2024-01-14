@@ -7,22 +7,25 @@ This repository contains extensive analysis of Bristol-Myers Squibb Molecular Tr
 In this experimental world, technology has provided various innovative tools; however, for organic chemists, the most accessible tools are still notebook and pen. They draw sub-atomic or molecular work with the structural notation used for an extended period. Several years of scanned documents can’t be searched for compound depictions by the scientist. The main goal of the Bristol-Myers Squibb Molecular Translation competition was to accelerate the research and development efforts and elevate organic chemist access to chemical research through image recognition of optical chemical structures using a machine learning algorithm. 
 In this project, we’ll convert chemical images to the molecular structure annotated by InChI text.
 
-## Results
-This section will discuss the Exploratory data analysis, optimization, pre-processing, and training models.
-1)	Exploratory Data Analysis- 
- Markup : * The dataset used in this project is from Bristol-Meyers Squibb’s bms molecular translation. There are 242418f labels in the training dataset.
-          *	String length of labels in the sample set of training labels are: [130,173,156,141,68]
-          *	The mean, median, and maximum character length of labels in the training dataset are 120, 115, and 397, respectively.
-          *	The Dataset comprises 100 features that are depicted by Image Pixels.
+## Background and Problem
+In the realm of organic chemistry, despite the advent of various innovative tools, the most accessible instruments for chemists remain a notebook and pen. Structural notations of sub-atomic or molecular work have been drawn for years using traditional methods. The challenge arises when years of scanned documents containing compound depictions cannot be easily searched by scientists. The Bristol-Myers Squibb Molecular Translation competition aimed to bridge this gap by leveraging machine learning algorithms for image recognition of optical chemical structures, converting chemical images to annotated molecular structures using the InChI text.
 
-2)	Model and Pre-processing
- Markup : *	Build a model to predict the chirality of each chemical compound
-          *	In our dataset of 2.4 million compounds, nearly 2 million compounds are not chiral, whereas 0.4 million are chiral with the chirality flag as 1
-          *	Preprocessed training images by resizing them and bringing them to the same color gradient
-          *	Build a Neural Network model using EfficientNet, which predicts the chirality of chemical compounds, achieving a validation accuracy of 92% with a log loss of 0.43. 
-          *	Performed Batch Normalization after every layer of the training model
-          *	Build 2 models, among them one model is 3 layered network, calculating the Levenshtein distance of validation data as 7.73. Our model predicts the same chemical structure with an average error of 7 characters
-          *	The other model is 5 layered network, calculating the Levenshtein distance of validation data as 8.95. Our model predicts the same chemical structure with an average of 8 characters
+## Results Summary
+### Exploratory Data Analysis
+- The dataset utilized in this project is sourced from Bristol-Meyers Squibb’s bms molecular translation, consisting of 242,418 labels in the training dataset.
+- String lengths of labels in the sample set of training labels: [130, 173, 156, 141, 68].
+- Mean, median, and maximum character length of labels: 120, 115, and 397, respectively.
+- The dataset comprises 100 features represented by Image Pixels.
+
+### Model and Pre-processing
+- Built a model to predict the chirality of each chemical compound.
+- In the dataset of 2.4 million compounds, almost 2 million are not chiral, while 0.4 million are chiral with the chirality flag as 1.
+- Preprocessed training images by resizing them and standardizing them to the same color gradient.
+- Developed a Neural Network model using EfficientNet, achieving a validation accuracy of 92% with a log loss of 0.43.
+- Applied Batch Normalization after every layer of the training model.
+- Developed 2 models:
+  - A 3-layered network with a Levenshtein distance of validation data as 7.73, predicting the same chemical structure with an average error of 7 characters.
+  - A 5-layered network with a Levenshtein distance of validation data as 8.95, predicting the same chemical structure with an average error of 8 characters.
 
 ## Requirements
 This project requires the below libraries:
